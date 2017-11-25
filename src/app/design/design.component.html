@@ -1,0 +1,83 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 80%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-left: 10%;
+  }
+
+  #myTable {
+    border-collapse: collapse;
+    width: 80%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 10%;
+  }
+
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+
+  #myTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  .con4 {
+    font-size: 24px;
+    font-family: "JasmineUPC";
+  }
+  .con3 {
+    font-size: 36px;
+    font-family: "Comic Sans MS";
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <form class="form-inline my-2 my-lg-0">
+        <a routerLink = ""><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Go to Home</button></a>
+    </form>
+</nav><br>
+
+<div align="center">
+    <img src="/css/webdesign.png" style="width:980px;height:300px;margin-bottom:2%;">
+    <table width=78% style="border:3px solid #ffaacc;" cellspacing="5" bgcolor=" #789562" cellpadding="5">
+        <tr><td style="border:3px dashed white;" bgcolor="#ffe6f2">
+            <p class="con3" style="text-align:center;"><strong><u>Design Homework</u></strong></p>
+            <p class="con4" style="text-align:center;">ให้ผู้ผ่านเข้ารอบสัมภาษณ์ออกแบบเว็บไซต์ของ <strong>"คณะรักษาความสงบแห่งชาติ หรือ คสช." </strong>
+              เพื่อเป็นสื่อกลางในการประชาสัมพันธ์นโยบายต่าง ๆ และเป็นสื่อกลางระหว่างประชาชนกับคณะรักษาความสงบแห่งชาติ 
+              โดยให้ออกแบบในลักษณะของ One Page Design Website<br>
+            *** สำหรับผู้ผ่านเข้ารอบสัมภาษณ์คนใดทำ CSS มา คณะกรรมการจะพิจารณาเป็นพิเศษ ***</p>
+        </td></tr>
+    </table>
+</div><br>
+
+<div class="container-fluid" style="font-family: JasmineUPC;">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for your ID or your name" title="Type in a name" style="font-size: 24px;">
+      <table id="myTable">
+          <tr class="header">
+            <th style="width:20%;text-align:center;font-size: 36px;">ID</th>
+            <th style="width:40%;text-align:center;font-size: 36px;">Firstname</th>
+            <th style="width:40%;text-align:center;font-size: 36px;">Lastname</th>
+          </tr>
+            <tr *ngFor = 'let i of getData'>
+                  <td style="text-align:center;font-size: 24px;" *ngIf="(i.major=='design')">{{i.interviewRef}}</td>
+                  <td style="text-align:center;font-size: 24px;" *ngIf="(i.major=='design')">{{i.firstName}}</td>
+                  <td style="text-align:center;font-size: 24px;" *ngIf="(i.major=='design')">{{i.lastName}}</td>
+            <tr>
+      </table>
+      <br><br>
+</div> 
+

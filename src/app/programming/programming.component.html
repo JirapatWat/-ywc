@@ -1,0 +1,89 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 80%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-left: 10%;
+  }
+
+  #myTable {
+    border-collapse: collapse;
+    width: 80%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 10%;
+  }
+
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+
+  #myTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  .back2 {
+    background-color: lightblue;
+  }
+  .con4 {
+    font-size: 24px;
+    font-family: "JasmineUPC";
+  }
+  .con3 {
+    font-size: 36px;
+    font-family: "Comic Sans MS";
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <form class="form-inline my-2 my-lg-0">
+        <a routerLink = ""><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Go to Home</button></a>
+    </form>
+</nav><br>
+
+<div align="center">
+  <img src="/css/programar.png" style="width:980px;height:300px;margin-bottom:2%;">
+  <table width=78% style="border:3px solid #ffaacc;" cellspacing="5" bgcolor=" #789562" cellpadding="5">
+      <tr><td style="border:3px dashed white;" bgcolor="#ffe6f2">
+          <p class="con3" style="text-align:center;"><strong><u>Programming Homework</u></strong></p>
+          <p class="con4" style="text-align:center;">
+              ให้เขียน <strong>เว็บไซต์ประกาศผลผู้ผ่านเข้ารอบสัมภาษณ์ของ YWC#15</strong>โดยใช้ข้อมูลจาก API โดยมี Feature ดังนี้</p>
+          <p class="con4" style="text-align:left;">
+              &nbsp;&nbsp;1. ดึงข้อมูลจาก API โดยตรง<br>
+              &nbsp;&nbsp;2. ให้แสดงผลแยกแต่ละสาขา<br>
+              &nbsp;&nbsp;3. มีระบบค้นหาชื่อผ่านกล่อง Search<br>
+              &nbsp;&nbsp;4. ความสามารถหรือ Feature พิเศษอื่น ๆ ที่มีความแตกต่าง และแสดงความสามารถของน้องออกมาให้ได้มากที่สุด<br>
+              &nbsp;&nbsp;*** เมื่อทำเสร็จแล้วให้ Push Source Code ขึ้น GitHub ก่อนเวลาสัมภาษณ์ ***</p>
+      </td></tr>
+    </table>
+</div><br>
+
+<div class="container-fluid" style="font-family: JasmineUPC;">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for your ID or your name" title="Type in a name" style="font-size: 24px;">
+      <table id="myTable">
+          <tr class="header">
+            <th style="width:20%;text-align:center;font-size: 36px;">ID</th>
+            <th style="width:40%;text-align:center;font-size: 36px;">Firstname</th>
+            <th style="width:40%;text-align:center;font-size: 36px;">Lastname</th>
+          </tr>
+            <tr *ngFor = 'let i of getData'>
+                  <td style="text-align:center;font-size: 24px;" *ngIf="(i.major=='programming')">{{i.interviewRef}}</td>
+                  <td style="text-align:center;font-size: 24px;" *ngIf="(i.major=='programming')">{{i.firstName}}</td>
+                  <td style="text-align:center;font-size: 24px;" *ngIf="(i.major=='programming')">{{i.lastName}}</td>
+            <tr>
+      </table>
+      <br><br>
+</div> 
