@@ -14,6 +14,11 @@
       color: #ffffff;
       text-align: left;
     }
+    .bg-4 { 
+      background-color: white; /* Dark Blue */
+      color: #ffffff;
+      text-align: left;
+    }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,14 +29,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" routerLink = "">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" routerLink = "">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink = "map">Map</a>
+              <a class="nav-link" routerLink = "map">Map<span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </div>
 </nav>
+
 <div class="back" align="center"><br>
     <div class="col-md-7 bg-3" ><br>
         <p class="con4" style="font-size:36px;background:red;text-align:center;"><strong>การเดินทางมาสัมภาษณ์</strong></p>
@@ -41,6 +47,15 @@
             3. ด้วยรถประจำทาง สามารถขึ้นใช้บริการสาย 15, 77, 155, 504, 177, 76<br></p>
     </div><br>
     <img src="/css/map.png" style="margin-bottom:2%;width:60%;height:80%;">
+    <script async defer src="https://www.google.com/maps/api/js?key=AIzaSyBT1bEXjG9twRif2RnpALddRUZQMPaPK_s&callback=initMap"></script>
+    
+    <iframe
+        width="750"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBT1bEXjG9twRif2RnpALddRUZQMPaPK_s
+        &q=C.P.+Tower" allowfullscreen style="margin-bottom:2%;">
+    </iframe>
 </div>
 
 
